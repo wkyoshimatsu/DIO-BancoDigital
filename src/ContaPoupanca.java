@@ -1,12 +1,12 @@
-public class ContaCorrente extends Conta{
-    public ContaCorrente(Cliente cliente) {
+public class ContaPoupanca extends Conta{
+    public ContaPoupanca(Cliente cliente) {
         super(cliente);
     }
 
     @Override
     public void exibirResumo() {
         System.out.println("====================================================");
-        System.out.println("============= Resumo da Conta Corrente =============");
+        System.out.println("============= Resumo da Conta Poupança =============");
         super.exibirDados();
         System.out.println("====================================================");
     }

@@ -5,7 +5,27 @@ public abstract class Conta implements IConta{
 
     protected int agencia;
     protected long numero;
+    protected char tipoConta;
+    protected Cliente cliente;
     protected double saldo;
+
+    public Conta(Cliente cliente, char tipoConta){
+        this.agencia = AGENCIA_PADRAO;
+        this.numero = SEQUENCIAL++;
+        this.cliente = cliente;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public long getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
 
     @Override
     public void sacar(double valor) {
@@ -14,8 +34,6 @@ public abstract class Conta implements IConta{
         System.out.println("Saque de " + valor + "realizado com sucesso");
         System.out.println("Seu saldo atual é: " + this.saldo);
         System.out.println("====================================================");
-
-
     }
 
     @Override
@@ -25,7 +43,6 @@ public abstract class Conta implements IConta{
         System.out.println("Depósito de " + valor + " realizado com sucesso");
         System.out.println("Seu saldo atual é: " + this.saldo);
         System.out.println("====================================================");
-
     }
 
     @Override
@@ -38,21 +55,10 @@ public abstract class Conta implements IConta{
         System.out.println("====================================================");
     }
 
-    public Conta(){
-        this.agencia = AGENCIA_PADRAO;
-        this.numero = SEQUENCIAL;
-    }
-
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public long getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
+    protected void exibirDados(){
+        System.out.println(String.format("Titular: %s %s", this.cliente.getPrimeiroNome(), this.cliente.getSobrenome()));
+        System.out.println(String.format("Agencia: %d", this.agencia));
+        System.out.println(String.format("Numero: %d", this.numero));
+        System.out.println(String.format("Saldo: %.2f", this.saldo));
     }
 }
