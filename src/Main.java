@@ -6,10 +6,10 @@ public class Main {
             opcao = terminal.exibirMenuPrincipal();
         } while(opcao == -1);
 
-        if (opcao == 1){
-            terminal.exibirCadastrarConta();
+        do if (opcao == 1) {
+            opcao = terminal.exibirCadastrarConta();
         } else {
             terminal.exibirAcessarConta();
-        }
+        } while(opcao != 0);
     }
 }
