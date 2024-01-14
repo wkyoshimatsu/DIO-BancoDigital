@@ -13,6 +13,7 @@ public abstract class Conta implements IConta{
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
+        this.tipoConta = tipoConta;
     }
 
     public int getAgencia() {
