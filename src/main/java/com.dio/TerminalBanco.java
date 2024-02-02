@@ -1,3 +1,5 @@
+package com.dio;
+
 import java.util.*;
 
 public class TerminalBanco {

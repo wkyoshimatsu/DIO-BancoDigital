@@ -1,12 +1,19 @@
+package com.dio;
+
+import lombok.Getter;
+
 public abstract class Conta implements IConta{
 
-    private static final int AGENCIA_PADRAO = 0001;
-    private static long SEQUENCIAL = 00001;
+    private static final int AGENCIA_PADRAO = 1;
+    private static long SEQUENCIAL = 1;
 
+    @Getter
     protected int agencia;
+    @Getter
     protected long numero;
     protected char tipoConta;
     protected Cliente cliente;
+    @Getter
     protected double saldo;
 
     public Conta(Cliente cliente, char tipoConta){
@@ -14,18 +21,6 @@ public abstract class Conta implements IConta{
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
         this.tipoConta = tipoConta;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public long getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     @Override
@@ -57,9 +52,9 @@ public abstract class Conta implements IConta{
     }
 
     protected void exibirDados(){
-        System.out.println(String.format("Titular: %s %s", this.cliente.getPrimeiroNome(), this.cliente.getSobrenome()));
-        System.out.println(String.format("Agencia: %d", this.agencia));
-        System.out.println(String.format("Numero: %d", this.numero));
-        System.out.println(String.format("Saldo: %.2f", this.saldo));
+        System.out.printf("Titular: %s %s%n", this.cliente.getPrimeiroNome(), this.cliente.getSobrenome());
+        System.out.printf("Agencia: %d%n", this.agencia);
+        System.out.printf("Numero: %d%n", this.numero);
+        System.out.printf("Saldo: %.2f%n", this.saldo);
     }
 }

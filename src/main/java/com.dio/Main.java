@@ -1,3 +1,5 @@
+package com.dio;
+
 public class Main {
     public static void main(String[] args) {
         TerminalBanco terminal = new TerminalBanco();
