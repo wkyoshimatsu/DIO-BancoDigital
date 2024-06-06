@@ -19,9 +19,21 @@ Para isso, seguem algumas sugestões:
 
 ```mermaid
 ---
-title: Animal example
+title: Diagrama de classes
 ---
 classDiagram
+class IConta
+<<interface>> Iconta
+IConta : sacar(double valor);
+IConta : depositar(double valor);
+IConta : transferir(double valor, Conta contaDestino);
+IConta : exibirResumo();
+
+class Conta{
+-int AGENCIA_PADRAO$
+-canEat()
+}
+
 note "From Duck till Zebra"
 Animal <|-- Duck
 note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
@@ -36,10 +48,8 @@ class Duck{
 +swim()
 +quack()
 }
-class Fish{
--int sizeInFeet
--canEat()
-}
+
+
 class Zebra{
 +bool is_wild
 +run()
