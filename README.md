@@ -17,6 +17,7 @@ Para isso, seguem algumas sugestões:
 - Use todo o seu conhecimento para estender o domínio, incluindo novas classes, atributos e/ou métodos;
 - Incluir o Lombok ao projeto para reduzir sua verbosidade de código.
 
+```mermaid
 ---
 title: Animal example
 ---
@@ -43,3 +44,4 @@ class Zebra{
 +bool is_wild
 +run()
 }
+```
