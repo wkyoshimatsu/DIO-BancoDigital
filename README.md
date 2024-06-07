@@ -1,6 +1,7 @@
 # DIO-BancoDigital
 
 ## Resolução do Desafio "Criando um Banco Digital com Java e Orientação a Objetos"
+Repositório do desafio ["DIO - Criando um Banco Digital com Java e Orientação a Objetos"](https://github.com/falvojr/lab-banco-digital-oo) por [Venilton Falvo Jr](https://github.com/falvojr]).
 
 ## Domínio / Problema
 
