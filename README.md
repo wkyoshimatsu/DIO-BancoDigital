@@ -88,8 +88,8 @@ Cliente "1" --* "1" Conta
 Conta "1..*" --o "1" Banco
 
 class Banco{
--int CODIGO_BANCO = 999$
--String NOME_BANCO = "Last Bank"$
+-int codigoBanco
+-String nomeBanco
 -List~Conta~ contas
 }
 
@@ -104,9 +104,10 @@ class Conta{
 
 #int agencia
 #long numero
+#double saldo
 #char tipoConta
 #Cliente cliente
-#double saldo
+
 
 +Conta(Cliente cliente, char tipoConta)
 +sacar(double valor)
@@ -133,24 +134,3 @@ transferir(double valor, Conta contaDestino)
 exibirResumo()
 }
 ```
-
-```mermaid
----
-title: Fluxo de telas
----
-stateDiagram-v2
-
-    M001 : Tela Inicial
-    M011 : Cadastro de conta
-    M012 : Acesso a conta
-    M002 : Sair do sistema
-    M021 : Acesso do banco
-
-    M001 --> M011
-    M001 --> M012
-    M001 --> M002
-    M001 --> M021
-
-
-```
-
