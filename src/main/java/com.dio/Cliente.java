@@ -8,9 +8,4 @@ import lombok.Setter;
 public class Cliente {
     private String primeiroNome;
     private String sobrenome;
-
-    public Cliente(String primeiroNome, String sobrenome) {
-        this.primeiroNome = primeiroNome;
-        this.sobrenome = sobrenome;
-    }
 }

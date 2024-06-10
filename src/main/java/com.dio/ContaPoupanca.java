@@ -9,7 +9,7 @@ public class ContaPoupanca extends Conta{
     public void exibirResumo() {
         System.out.println("====================================================");
         System.out.println("              Resumo da Conta Poupança");
-        super.exibirDados();
+        super.exibirDadosDaConta();
         System.out.println("====================================================");
     }
 }

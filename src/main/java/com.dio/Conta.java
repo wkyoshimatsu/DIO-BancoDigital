@@ -11,16 +11,17 @@ public abstract class Conta implements IConta{
     protected int agencia;
     @Getter
     protected long numero;
-    protected char tipoConta;
-    protected Cliente cliente;
     @Getter
     protected double saldo;
+    protected Cliente cliente;
+    protected char tipoConta;
 
     public Conta(Cliente cliente, char tipoConta){
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
         this.tipoConta = tipoConta;
+
     }
 
     @Override
@@ -51,7 +52,14 @@ public abstract class Conta implements IConta{
         System.out.println("====================================================");
     }
 
-    protected void exibirDados(){
+    public void exibirResumo() {
+        System.out.println("====================================================");
+        System.out.println("              Resumo da Conta Corrente");
+        super.exibirDadosDaConta();
+        System.out.println("====================================================");
+    }
+
+    protected void exibirDadosDaConta(){
         System.out.printf("Titular: %s %s%n", this.cliente.getPrimeiroNome(), this.cliente.getSobrenome());
         System.out.printf("Agencia: %d%n", this.agencia);
         System.out.printf("Numero: %d%n", this.numero);

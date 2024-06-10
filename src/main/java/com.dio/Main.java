@@ -2,21 +2,16 @@ package com.dio;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Teste");
-        TerminalBanco terminal = new TerminalBanco();
-        int opcao;
-        do{
-            opcao = terminal.exibirMenuPrincipal();
+        Cliente joseCampos = new Cliente();
+        joseCampos.setNome("José Campos");
 
-            do if (opcao == 1) {
-                opcao = terminal.exibirCadastrarConta();
-            } else if (opcao == 2) {
-                terminal.exibirAcessarConta();
-            } else {
-                System.out.println("erro");
-            } while(opcao != 0);
+        Conta contaCorrente = new ContaCorrente(joseCampos);
+        Conta contaPoupanca = new ContaPoupanca(joseCampos);
 
-        } while(opcao == -1);
+        contaCorrente.depositar(100);
+        contaCorrente.transferir(100, contaPoupanca);
 
+        contaCorrente.exibirResumo();
+        contaPoupanca.exibirResumo();
     }
 }
